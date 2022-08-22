@@ -1,0 +1,78 @@
+body {
+  background-image: url("/assets/home.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: wheat;
+}
+
+.container {
+  position: relative;
+  max-width: 1920px;
+  margin: 10% auto;
+}
+
+.ancient-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.ancient-row .start-button {
+  position: absolute;
+  margin: 0 auto;
+  width: 300px;
+  height: 100px;
+  opacity: 0;
+}
+.ancient-row .ancient {
+  z-index: 2;
+  max-width: 250px;
+}
+.ancient-row .ancient img {
+  width: 100%;
+}
+
+.difficulty {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  text-align: center;
+  z-index: 0;
+  opacity: 0;
+}
+.difficulty__title {
+  font-size: 2.5rem;
+}
+.difficulty__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.difficulty__level {
+  max-width: 300px;
+  font-size: 2rem;
+  text-decoration: none;
+  list-style: none;
+}
+.difficulty__level.very-easy:hover {
+  border: 2px solid #00ff7b;
+}
+.difficulty__level.easy:hover {
+  border: 2px solid #079d50;
+}
+.difficulty__level.normal:hover {
+  border: 2px solid rgb(92, 77, 204);
+}
+.difficulty__level.hard:hover {
+  border: 2px solid red;
+}
+.difficulty__level.very-hard:hover {
+  border: 2px solid rgb(72, 2, 2);
+}
+.difficulty__level a {
+  text-decoration: none;
+  color: inherit;
+}/*# sourceMappingURL=style.css.map */
