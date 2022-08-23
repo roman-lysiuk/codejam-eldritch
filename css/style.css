@@ -18,13 +18,11 @@
     transform: translateX(1%);
   }
 }
-html {
+
+body {
   background-image: url("./assets/home.png");
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-body {
   color: wheat;
   overflow: hidden;
 }
