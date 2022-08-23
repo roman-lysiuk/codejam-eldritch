@@ -9,24 +9,33 @@
   </head>
   <body>
     <div class="container">
-      <div class="ancient-row">
-        <button class="start-button">Старт</button>
+      <button class="start-button">Start</button>
+      <section class="ancient-row">
         <div class="ancient">
-          <a href="#"><img src="./assets/Ancients/Azathoth.png" alt="" /></a>
-        </div>
-        <div class="ancient">
-          <a href="#"><img src="./assets/Ancients/Cthulthu.png" alt="" /></a>
-        </div>
-        <div class="ancient">
-          <a href="#"><img src="./assets/Ancients/IogSothoth.png" alt="" /></a>
+          <a href="#"
+            ><img id="azathoth" src="./assets/Ancients/Azathoth.png" alt=""
+          /></a>
         </div>
         <div class="ancient">
           <a href="#"
-            ><img src="./assets/Ancients/ShubNiggurath.png" alt=""
+            ><img id="cthulhu" src="./assets/Ancients/Cthulthu.png" alt=""
           /></a>
         </div>
-      </div>
-      <div class="difficulty">
+        <div class="ancient">
+          <a href="#"
+            ><img id="iogSothoth" src="./assets/Ancients/IogSothoth.png" alt=""
+          /></a>
+        </div>
+        <div class="ancient">
+          <a href="#"
+            ><img
+              id="shubNiggurath"
+              src="./assets/Ancients/ShubNiggurath.png"
+              alt=""
+          /></a>
+        </div>
+      </section>
+      <section class="difficulty">
         <div class="difficulty__title">
           <h2>Выберите уровень сложности</h2>
         </div>
@@ -47,8 +56,41 @@
             <a href="#">Очень высокий</a>
           </li>
         </ul>
-      </div>
+      </section>
+      <section class="select-deck">
+        <div class="stages-game-list">
+          <h4 class="stages-game-title">Первая стадия</h4>
+          <div class="stages-game stages-game__first">
+            <li class="stages-game__item stages-game__item_green"></li>
+            <li class="stages-game__item stages-game__item_brown"></li>
+            <li class="stages-game__item stages-game__item_blue"></li>
+          </div>
+          <h4 class="stages-game-title">Вторая стадия</h4>
+          <div class="stages-game stages-game__second">
+            <li class="stages-game__item stages-game__item_green"></li>
+            <li class="stages-game__item stages-game__item_brown"></li>
+            <li class="stages-game__item stages-game__item_blue"></li>
+          </div>
+          <h4 class="stages-game-title">Третья стадия</h4>
+          <div class="stages-game stages-game__third">
+            <li class="stages-game__item stages-game__item_green"></li>
+            <li class="stages-game__item stages-game__item_brown"></li>
+            <li class="stages-game__item stages-game__item_blue"></li>
+          </div>
+        </div>
+        <div class="desk">
+          <a class="desk__close" href="#"
+            ><img src="./assets/mythicCardBackground.png" alt=""
+          /></a>
+          <a href="#"
+            ><img
+              class="desk__open"
+              src="./assets/mythicCardBackground.png"
+              alt=""
+          /></a>
+        </div>
+      </section>
     </div>
-    <script src="./script.js"></script>
+    <script type="module" src="./script.js"></script>
   </body>
 </html>

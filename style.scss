@@ -15,19 +15,20 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    .start-button {
-        position: absolute;
-        margin: 0 auto;
-        width: 300px;
-        height: 100px;
-        opacity: 0;
-    }
+    gap: 30px;
+    opacity: 0;
+    z-index: 0;
+    visibility: hidden;
     .ancient {
-        z-index: 2;
         max-width: 250px;
         & img {
             width: 100%;
         }
+    }
+    &.active {
+        z-index: 2;
+        opacity: 1;
+        visibility: visible;
     }
 }
 .difficulty {
@@ -38,8 +39,14 @@ body {
     left: 0;
     background-color: black;
     text-align: center;
-    z-index: 0;
     opacity: 0;
+    visibility: hidden;
+    z-index: 0;
+    &.active {
+        z-index: 2;
+        opacity: 1;
+        visibility: visible;
+    }
     &__title {
         font-size: 2.5rem;
     }
@@ -75,5 +82,67 @@ body {
             text-decoration: none;
             color: inherit;
         }
+    }
+}
+.select-deck {
+    position: fixed;
+    top: 0;
+    right: 50px;
+    opacity: 0;
+    z-index: 0;
+    visibility: hidden;
+    &.active {
+        z-index: 2;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+.stages-game-list {
+}
+.desk {
+    position: fixed;
+    top: 33%;
+    left: 20%;
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    max-width: 500px;
+
+    & img {
+        width: 100%;
+    }
+}
+.stages-game-title {
+    font-size: 1.2rem;
+}
+.stages-game {
+    display: flex;
+    gap: 15px;
+    &__first {
+    }
+    &__item {
+        list-style: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    &__item_green {
+        background-color: green;
+    }
+
+    &__item_brown {
+        background-color: brown;
+    }
+
+    &__item_blue {
+        background-color: blue;
+    }
+
+    &__second {
+    }
+
+    &__third {
     }
 }

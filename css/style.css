@@ -15,20 +15,21 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-.ancient-row .start-button {
-  position: absolute;
-  margin: 0 auto;
-  width: 300px;
-  height: 100px;
+  gap: 30px;
   opacity: 0;
+  z-index: 0;
+  visibility: hidden;
 }
 .ancient-row .ancient {
-  z-index: 2;
   max-width: 250px;
 }
 .ancient-row .ancient img {
   width: 100%;
+}
+.ancient-row.active {
+  z-index: 2;
+  opacity: 1;
+  visibility: visible;
 }
 
 .difficulty {
@@ -39,8 +40,14 @@ body {
   left: 0;
   background-color: black;
   text-align: center;
-  z-index: 0;
   opacity: 0;
+  visibility: hidden;
+  z-index: 0;
+}
+.difficulty.active {
+  z-index: 2;
+  opacity: 1;
+  visibility: visible;
 }
 .difficulty__title {
   font-size: 2.5rem;
@@ -75,4 +82,57 @@ body {
 .difficulty__level a {
   text-decoration: none;
   color: inherit;
+}
+
+.select-deck {
+  position: fixed;
+  top: 0;
+  right: 50px;
+  opacity: 0;
+  z-index: 0;
+  visibility: hidden;
+}
+.select-deck.active {
+  z-index: 2;
+  opacity: 1;
+  visibility: visible;
+}
+
+.desk {
+  position: fixed;
+  top: 33%;
+  left: 20%;
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  max-width: 500px;
+}
+.desk img {
+  width: 100%;
+}
+
+.stages-game-title {
+  font-size: 1.2rem;
+}
+
+.stages-game {
+  display: flex;
+  gap: 15px;
+}
+.stages-game__item {
+  list-style: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  text-align: center;
+}
+.stages-game__item_green {
+  background-color: green;
+}
+.stages-game__item_brown {
+  background-color: brown;
+}
+.stages-game__item_blue {
+  background-color: blue;
 }/*# sourceMappingURL=style.css.map */
