@@ -1,14 +1,51 @@
+@keyframes tremor {
+    0%,
+    25% {
+        left: -1px;
+        transform: translateX(-1%);
+    }
+    50%,
+    100% {
+        left: 1px;
+        transform: translateX(1%);
+    }
+}
 body {
     background-image: url("/assets/home.png");
     background-repeat: no-repeat;
     background-size: cover;
     color: wheat;
-    // overflow: hidden;
+    overflow: hidden;
 }
 .container {
     position: relative;
     max-width: 1920px;
-    margin: 10% auto; //изменить расположение по центру всего блока . 15% это не правильно
+
+    margin: 0 auto; //изменить расположение по центру всего блока . 15% это не правильно
+}
+.start-button {
+    position: fixed;
+    min-width: 200px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+    button {
+        width: 100%;
+        height: 100%;
+        font-size: 2rem;
+        border: 0;
+        background-color: #5f6a63ed;
+        box-shadow: 0px 0px 300px 200px rgba(95, 106, 99, 0.86);
+        border-radius: 10%;
+        transition: box-shadow 0.5s;
+        &:hover {
+            cursor: pointer;
+            transition: box-shadow 0.5s;
+            box-shadow: 0px 0px 0px 0px rgba(95, 106, 99, 0.86);
+        }
+    }
 }
 
 .ancient-row {
@@ -18,11 +55,28 @@ body {
     gap: 30px;
     opacity: 0;
     z-index: 0;
+    flex-wrap: wrap;
     visibility: hidden;
+    transition: all 1s;
+    .ancient__title {
+        z-index: 2;
+        font-size: 2rem;
+        text-align: center;
+        width: 100%;
+    }
     .ancient {
         max-width: 250px;
+        transition: all 200ms;
+        &:hover {
+            max-width: 350px;
+            border-radius: 10%;
+            box-shadow: 0px 0px 300px 20000px rgba(95, 106, 99, 0.86);
+            animation: 0.1s tremor ease-out infinite;
+            animation-delay: 2s;
+        }
         & img {
             width: 100%;
+            border-radius: 10%;
         }
     }
     &.active {
@@ -42,13 +96,16 @@ body {
     opacity: 0;
     visibility: hidden;
     z-index: 0;
+    transition: all 1.5s;
     &.active {
         z-index: 2;
         opacity: 1;
         visibility: visible;
     }
     &__title {
+        position: relative;
         font-size: 2.5rem;
+        z-index: 2;
     }
 
     &__list {
@@ -62,21 +119,33 @@ body {
         max-width: 300px;
         font-size: 2rem;
         text-decoration: none;
+
         list-style: none;
+        transition: 0.5s;
+        &:hover {
+            font-size: 2.7rem;
+        }
         &.very-easy:hover {
-            border: 2px solid #00ff7b;
+            background-color: rgba(0, 255, 123, 0.36);
+            box-shadow: 0px 0px 300px 500px rgba(0, 255, 123, 0.36);
         }
         &.easy:hover {
-            border: 2px solid #079d50;
+            background-color: rgba(2, 66, 33, 0.423);
+            box-shadow: 0px 0px 300px 600px rgba(2, 66, 33, 0.423);
         }
         &.normal:hover {
-            border: 2px solid rgb(92, 77, 204);
+            background-color: rgba(92, 77, 204, 0.33);
+            box-shadow: 0px 0px 300px 600px rgba(92, 77, 204, 0.33);
         }
         &.hard:hover {
-            border: 2px solid red;
+            background-color: rgba(242, 41, 41, 0.33);
+            box-shadow: 0px 0px 300px 600px rgba(242, 41, 41, 0.33);
+            animation: 0.1s tremor ease-out infinite;
         }
         &.very-hard:hover {
-            border: 2px solid rgb(72, 2, 2);
+            background-color: rgba(128, 3, 3, 0.936);
+            box-shadow: 0px 0px 300px 500px rgba(128, 3, 3, 0.936);
+            animation: 0.1s tremor ease-out infinite;
         }
         a {
             text-decoration: none;
@@ -85,12 +154,11 @@ body {
     }
 }
 .select-deck {
-    position: fixed;
-    top: 0;
-    right: 50px;
+    position: relative;
     opacity: 0;
     z-index: 0;
     visibility: hidden;
+    transition: all 1.5s;
     &.active {
         z-index: 2;
         opacity: 1;
@@ -101,15 +169,48 @@ body {
 }
 .desk {
     position: fixed;
-    top: 33%;
-    left: 20%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     gap: 50px;
     justify-content: space-between;
-    max-width: 500px;
-
+    max-width: 450px;
+    flex-wrap: wrap;
+    a {
+        max-width: 200px;
+        &.again {
+            opacity: 0;
+            z-index: 0;
+            visibility: hidden;
+            width: 100%;
+            text-decoration: none;
+            text-align: center;
+            &.active {
+                z-index: 2;
+                opacity: 1;
+                visibility: visible;
+            }
+            span {
+                color: wheat;
+                font-size: 1.5rem;
+                transition: color 0.3s;
+                &:hover {
+                    color: rgb(0, 0, 0);
+                }
+            }
+        }
+    }
     & img {
+        border-radius: 10%;
         width: 100%;
+    }
+    &__open {
+        cursor: none;
+    }
+    &__close {
+        &:hover {
+        }
     }
 }
 .stages-game-title {

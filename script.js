@@ -12,28 +12,28 @@ let blueDesk = [];
 let OneStageDesk = [];
 let TwoStageDesk = [];
 let ThreeStageDesk = [];
-function nameX() {
-  document.querySelectorAll(".stages-game__first>li")[0].textContent =
-    ancientsData[ancient].firstStage.greenCards;
-  document.querySelectorAll(".stages-game__first>li")[1].textContent =
-    ancientsData[ancient].firstStage.brownCards;
-  document.querySelectorAll(".stages-game__first>li")[2].textContent =
-    ancientsData[ancient].firstStage.blueCards;
+// function nameX() {
+//   document.querySelectorAll(".stages-game__first>li")[0].textContent =
+//     ancientsData[ancient].firstStage.greenCards;
+//   document.querySelectorAll(".stages-game__first>li")[1].textContent =
+//     ancientsData[ancient].firstStage.brownCards;
+//   document.querySelectorAll(".stages-game__first>li")[2].textContent =
+//     ancientsData[ancient].firstStage.blueCards;
 
-  document.querySelectorAll(".stages-game__second>li")[0].textContent =
-    ancientsData[ancient].secondStage.greenCards;
-  document.querySelectorAll(".stages-game__second>li")[1].textContent =
-    ancientsData[ancient].secondStage.brownCards;
-  document.querySelectorAll(".stages-game__second>li")[2].textContent =
-    ancientsData[ancient].secondStage.blueCards;
+//   document.querySelectorAll(".stages-game__second>li")[0].textContent =
+//     ancientsData[ancient].secondStage.greenCards;
+//   document.querySelectorAll(".stages-game__second>li")[1].textContent =
+//     ancientsData[ancient].secondStage.brownCards;
+//   document.querySelectorAll(".stages-game__second>li")[2].textContent =
+//     ancientsData[ancient].secondStage.blueCards;
 
-  document.querySelectorAll(".stages-game__third>li")[0].textContent =
-    ancientsData[ancient].thirdStage.greenCards;
-  document.querySelectorAll(".stages-game__third>li")[1].textContent =
-    ancientsData[ancient].thirdStage.brownCards;
-  document.querySelectorAll(".stages-game__third>li")[2].textContent =
-    ancientsData[ancient].thirdStage.blueCards;
-}
+//   document.querySelectorAll(".stages-game__third>li")[0].textContent =
+//     ancientsData[ancient].thirdStage.greenCards;
+//   document.querySelectorAll(".stages-game__third>li")[1].textContent =
+//     ancientsData[ancient].thirdStage.brownCards;
+//   document.querySelectorAll(".stages-game__third>li")[2].textContent =
+//     ancientsData[ancient].thirdStage.blueCards;
+// }
 
 function getAmmountCard(element) {
   switch (element.id) {
@@ -98,7 +98,6 @@ function getAmmountCard(element) {
       ancient = 3;
       break;
   }
-  nameX();
 }
 
 function getDifficulty(element) {
@@ -407,9 +406,6 @@ document.querySelector(".difficulty").addEventListener("click", (e) => {
   getMixStageDesk();
 });
 document.querySelector(".desk__close").addEventListener("click", (e) => {
-  // console.log(OneStageDesk);
-  // console.log(TwoStageDesk);
-  // console.log(ThreeStageDesk);
   if (OneStageDesk.length > 0) {
     let randomNum = getRandomIntInclusive(0, OneStageDesk.length - 1);
     document.querySelector(".desk__open").src = `${
@@ -428,7 +424,11 @@ document.querySelector(".desk__close").addEventListener("click", (e) => {
   } else {
     document.querySelector(".desk__open").src =
       "./assets/mythicCardBackground.png";
-
-    console.log("end");
+    document.querySelector(".again").classList.add("active");
   }
+});
+document.querySelector(".again").addEventListener("click", () => {
+  document.querySelector(".again").classList.remove("active");
+  document.querySelector(".ancient-row").classList.add("active");
+  document.querySelector(".select-deck").classList.remove("active");
 });

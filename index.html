@@ -9,8 +9,13 @@
   </head>
   <body>
     <div class="container">
-      <button class="start-button">Start</button>
+      <div class="start-button">
+        <button>Start</button>
+      </div>
       <section class="ancient-row">
+        <div class="ancient__title">
+          <h2>Выбери карту Древнего</h2>
+        </div>
         <div class="ancient">
           <a href="#"
             ><img id="azathoth" src="./assets/Ancients/Azathoth.png" alt=""
@@ -37,7 +42,7 @@
       </section>
       <section class="difficulty">
         <div class="difficulty__title">
-          <h2>Выберите уровень сложности</h2>
+          <h2>Выбери уровень сложности</h2>
         </div>
         <ul class="difficulty__list">
           <li class="difficulty__level very-easy" id="very-easy">
@@ -58,9 +63,9 @@
         </ul>
       </section>
       <section class="select-deck">
-        <div class="stages-game-list">
-          <h4 class="stages-game-title">Первая стадия</h4>
-          <div class="stages-game stages-game__first">
+        <!-- <div class="stages-game-list"> -->
+        <!-- <h4 class="stages-game-title">Первая стадия</h4> -->
+        <!-- <div class="stages-game stages-game__first">
             <li class="stages-game__item stages-game__item_green"></li>
             <li class="stages-game__item stages-game__item_brown"></li>
             <li class="stages-game__item stages-game__item_blue"></li>
@@ -77,10 +82,13 @@
             <li class="stages-game__item stages-game__item_brown"></li>
             <li class="stages-game__item stages-game__item_blue"></li>
           </div>
-        </div>
+        </div> -->
         <div class="desk">
           <a class="desk__close" href="#"
-            ><img src="./assets/mythicCardBackground.png" alt=""
+            ><img
+              title="Нажми чтобы увидеть карту"
+              src="./assets/mythicCardBackground.png"
+              alt=""
           /></a>
           <a href="#"
             ><img
@@ -88,6 +96,7 @@
               src="./assets/mythicCardBackground.png"
               alt=""
           /></a>
+          <a class="again" href="#"><span>Начать заново?</span></a>
         </div>
       </section>
     </div>
