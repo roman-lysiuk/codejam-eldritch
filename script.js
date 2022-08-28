@@ -12,6 +12,9 @@ let blueDesk = [];
 let OneStageDesk = [];
 let TwoStageDesk = [];
 let ThreeStageDesk = [];
+alert(
+  "Трекер колоды не делал ,но для удобства проверки вывел в консоль массивы картинок 3х этапов"
+);
 // function nameX() {
 //   document.querySelectorAll(".stages-game__first>li")[0].textContent =
 //     ancientsData[ancient].firstStage.greenCards;
@@ -36,6 +39,7 @@ let ThreeStageDesk = [];
 // }
 
 function getAmmountCard(element) {
+  console.log("Выбрано имя древнего:", element.id);
   switch (element.id) {
     case "azathoth":
       amountGreenCard =
@@ -101,6 +105,7 @@ function getAmmountCard(element) {
 }
 
 function getDifficulty(element) {
+  console.log("Выбран уровень сложности:", element.id);
   switch (element.id) {
     case "very-easy":
       const maxEasyBlueCard = 4;
@@ -386,6 +391,14 @@ function getMixStageDesk() {
   ThreeStageDesk.push(
     ...brownDesk.splice(0, ancientsData[ancient].thirdStage.brownCards)
   );
+  console.log(
+    "Колода первого этапа:",
+    OneStageDesk,
+    "\nКолода второго этапа:",
+    TwoStageDesk,
+    "\nКолода третьего этапа:",
+    ThreeStageDesk
+  );
 }
 
 document.querySelector(".ancient-row").addEventListener("click", (e) => {
@@ -426,6 +439,14 @@ document.querySelector(".desk__close").addEventListener("click", (e) => {
       "./assets/mythicCardBackground.png";
     document.querySelector(".again").classList.add("active");
   }
+  console.log(
+    "Колода первого этапа:",
+    OneStageDesk,
+    "\nКолода второго этапа:",
+    TwoStageDesk,
+    "\nКолода третьего этапа:",
+    ThreeStageDesk
+  );
 });
 document.querySelector(".again").addEventListener("click", () => {
   document.querySelector(".again").classList.remove("active");
