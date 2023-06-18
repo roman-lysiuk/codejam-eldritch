@@ -271,7 +271,7 @@ document.querySelector(".desk__close").addEventListener("click", (e) => {
     let randomNum = getRandomIntInclusive(0, ThreeStageDesk.length - 1);
     document.querySelector(".desk__open").src = `${ThreeStageDesk.splice(randomNum, 1)[0]}`;
   } else {
-    document.querySelector(".desk__open").src = "./assets/mythicCardBackground.png";
+    document.querySelector(".desk__open").src = "./assets/mythicCardBackground.jpg";
     document.querySelector(".again").classList.add("active");
   }
   console.log("Колода первого этапа:", OneStageDesk, "\nКолода второго этапа:", TwoStageDesk, "\nКолода третьего этапа:", ThreeStageDesk);
